@@ -38,7 +38,7 @@ class AlgoliaEngine extends Engine
         $index = $this->algolia->initIndex($models->first()->searchableAs());
 
         $index->addObjects($models->map(function ($model) {
-            $array = $model->toSearchableArray();
+            $array = array_merge($model->toSearchableArray(), $model->scoutMetadata());
 
             if (empty($array)) {
                 return;
