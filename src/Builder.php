@@ -73,8 +73,6 @@ class Builder
         $this->model = $model;
         $this->query = $query;
         $this->callback = $callback;
-
-        $this->wheres['__soft_deleted'] = 0;
     }
 
     /**
