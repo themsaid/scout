@@ -73,7 +73,7 @@ class Builder
         $this->model = $model;
         $this->query = $query;
         $this->callback = $callback;
-        
+
         $this->wheres['__soft_deleted'] = 0;
     }
 
@@ -98,20 +98,6 @@ class Builder
      * @return $this
      */
     public function where($field, $value)
-    {
-        $this->wheres[$field] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Add a constraint to the search query.
-     *
-     * @param  string  $field
-     * @param  mixed  $value
-     * @return $this
-     */
-    public function with($field, $value)
     {
         $this->wheres[$field] = $value;
 
